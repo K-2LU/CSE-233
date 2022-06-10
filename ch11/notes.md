@@ -106,3 +106,21 @@ final void setPriority (int level)
 ```
 level specifies the priority setting for the calling thread. The valuse of _label_ must be within range of MIN_PRIORITY (1) and MAX_PRIORITY (10).
 And default priority NORM_PRIORITY is 5. These priorities are defined as __static final__ variables within __Thread__.
+
+### Interthread Communication
+
+* __wait()__ tells the calling thread to give up the monitor and go to sleep until some other thread neters the same monitor and call __notify()__ or __notifyAll()__.
+* __notify()__ wakes up a thread that called __wait()__ on the same object.
+* __notifyAll()__ wakes up all the threads that called __wait()__ on the same object. One of the threads will be granted access.
+
+These methods are declared within __Object__,
+``` java
+	final void wait() throws InterruptedException
+	final void notify()
+	final void notifyAll()
+```
+
+__Point to be made__ __wait()__ normally waits until __notify()__ or __notifyAll()__ is called, there is a possiblity that in very rare cases the waiting thread could be awakened due to 
+spurious wakeup(illegitimate). In this case a waiting thread resumes without __notify()__ or __notifyAll()__ having being called(for no reason).
+
+Becase of this remote possiblity, Java API documentation recommends that calls to __wait()__ should take place within a loop that checks the condition on which the thread is waiting.
