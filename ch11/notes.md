@@ -71,3 +71,11 @@ To implement Runnable, a class need only implement a single method called __run(
 ```
 
 __run()__ establishes the entry point for another, concurrent thread of execution within a program.
+
+#### Extending Thread
+Another way of creating a thread is creating a new class, extending __Thread__, creating a new instance of that class and overriding the run() method.
+
+#### Choosing an approach
+If you will not be overriding any of Thread's methods(other than __run()__), it is best to implement __Runnable__.
+
+By implementing __Runnable__ the thread class does not need to inherit __Thread__, making it free to inherit a different class.
