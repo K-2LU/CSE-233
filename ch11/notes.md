@@ -79,3 +79,30 @@ Another way of creating a thread is creating a new class, extending __Thread__, 
 If you will not be overriding any of Thread's methods(other than __run()__), it is best to implement __Runnable__.
 
 By implementing __Runnable__ the thread class does not need to inherit __Thread__, making it free to inherit a different class.
+
+### using isAlive() and join()
+There are two ways to determine wheter a thread has finished or not. 
+
+First, __isAlive()__ method. General form: 
+``` java
+	final boolean isAlive()
+```
+__isAlive()__ returns __true__ if the thread is still running, otherwise it returns __false__.
+
+And, there is __join()__ method:
+``` java
+	final void join() throws InterruptedException
+```
+This method waits until the thread on which it is called terminates.
+
+### Thread Priorities
+Thread priorities are used by the thread scheduler to decide when each thread should be allowed to run.
+
+To set a thread's priority, use __setPriority()__ method, which is a member of __Thread__.
+
+General form:
+```	java
+final void setPriority (int level)
+```
+level specifies the priority setting for the calling thread. The valuse of _label_ must be within range of MIN_PRIORITY (1) and MAX_PRIORITY (10).
+And default priority NORM_PRIORITY is 5. These priorities are defined as __static final__ variables within __Thread__.
