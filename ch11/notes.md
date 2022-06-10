@@ -42,3 +42,32 @@ To create a new thread, our program will either extend __Thread__ or implement t
 | start | Start a thread by calling its run method |
 
 __Thread group:__ A _thread group_ is a data structure that controls the state of a collection of threads as a whole.
+
+__sleep() method general form:__(specified in miliseconds)          
+``` java
+	static void sleep(long miliseconds) throws InterruptedException
+```
+
+__sleep() method second form:__(specified in miliseconds and nanoseconds)          
+``` java
+	static void sleep(long miliseconds, int nanoseconds) throws 
+	InterruptedException
+```
+
+### Creating a Thread
+---------------
+In general sense, we will create a thread by instantiating an object of type Thread.
+This can be accomplished by:          
+* implement the __Runnable__ interface
+* extend the __Thread__ class
+
+#### Implementing Runnable
+The easiest way to create a thread is to create a class that implements the __Runnable__ interface.
+
+To implement Runnable, a class need only implement a single method called __run()__,
+
+``` java 
+	public void run()
+```
+
+__run()__ establishes the entry point for another, concurrent thread of execution within a program.
