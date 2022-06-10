@@ -124,3 +124,21 @@ __Point to be made__ __wait()__ normally waits until __notify()__ or __notifyAll
 spurious wakeup(illegitimate). In this case a waiting thread resumes without __notify()__ or __notifyAll()__ having being called(for no reason).
 
 Becase of this remote possiblity, Java API documentation recommends that calls to __wait()__ should take place within a loop that checks the condition on which the thread is waiting.
+
+### Obtaining a Thread's state
+You can obtain the current state of a thread by calling the __getState()__ method defined by __Thread__.
+``` java
+	Thread.State getState()
+```
+
+| Value | State |
+|----| ----|
+| BLOCKED | A thread that has suspended excecution because it is waiting to acquire a lock |
+| NEW | A thread that has not begun execution |
+| RUNNABLE | A thread that either is currently excecuting or will excecute when it gains access to CPU |
+| TERMINATED | A thread that has completed excecution |
+| TIMED_WARNING | A thread that has suspended execution for a specified period of time, such as when it has called sleep( ). This state is also entered when a timeout version of wait( ) or join( ) is called |
+| WAITING | A thread that has suspended excecution because it is waiting for some action to occur |
+
+### Using a Factory Method to Create and Start a Thread
+A _factory method_ is a method that returns an object of a class. Typically, factory methods area _static_ methods of a class.
