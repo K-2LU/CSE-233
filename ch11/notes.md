@@ -31,7 +31,6 @@ a program. When a thread blocks in a Java program, only the single thread that i
 Java's multithreading system is build upon the __Thread__ class, it's methods, and its companion interface, __Runnable__.
 To create a new thread, our program will either extend __Thread__ or implement the __Runnable__ interface.
 
-|------|--------|
 | Method | Meaning |
 |------|--------|
 | getName | Obtain a thread's name |
@@ -41,4 +40,4 @@ To create a new thread, our program will either extend __Thread__ or implement t
 | run | Entry point for the thread |
 | sleep | Suspend a thread for a period of time |
 | start | Start a thread by calling its run method |
-|------|
+
