@@ -41,3 +41,4 @@ To create a new thread, our program will either extend __Thread__ or implement t
 | sleep | Suspend a thread for a period of time |
 | start | Start a thread by calling its run method |
 
+__Thread group:__ A _thread group_ is a data structure that controls the state of a collection of threads as a whole.
