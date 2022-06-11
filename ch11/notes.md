@@ -141,4 +141,4 @@ You can obtain the current state of a thread by calling the __getState()__ metho
 | WAITING | A thread that has suspended excecution because it is waiting for some action to occur |
 
 ### Using a Factory Method to Create and Start a Thread
-A _factory method_ is a method that returns an object of a class. Typically, factory methods area _static_ methods of a class.
+# A _factory method_ is a method that returns an object of a class. Typically, factory methods area _static_ methods of a class.
